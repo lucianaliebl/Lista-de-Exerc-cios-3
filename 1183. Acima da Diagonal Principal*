@@ -28,3 +28,37 @@ int main(){
 
    return 0;
 }
+
+#include <stdio.h>
+
+int main(){
+
+   char O;
+   double M[12][12];
+   double soma = 0;
+   int colunaInicial;
+
+   scanf(" %c", &O);
+
+   for(int linha = 0; linha < 12; linha++){
+       for(int coluna = 0; coluna < 12; coluna++){
+           scanf("%lf", & M[linha][coluna]); 
+       }
+    }
+
+   for(int linha = 0; linha < 12; linha++){
+       for(int coluna = colunaInicial; coluna < 12; coluna++){
+           soma = soma + M[linha][coluna];
+       }
+       colunaInicial++;
+    } 
+     
+     if(T == 'S'){
+        printf("%.1lf\n", soma);
+    }
+    else if(T == 'M'){
+        printf("%.1lf\n", soma/66);
+    }
+
+   return 0;
+}
