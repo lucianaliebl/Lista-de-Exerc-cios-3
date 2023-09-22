@@ -3,29 +3,29 @@
 int main(){
 
    int L;
-   char T[2];
+   char T;
    double M[12][12];
-   double soma = 0.0;
+   double soma = 0;
 
    scanf("%d", &L); 
 
-   scanf("%s", &T);
-
-   for(int i = 0; i < 12; i++){
-       for(int j = 0; j < 12; i++){
-           scanf("%lf", & M[i][j]); 
+   scanf(" %c", &T);
+   
+    for(int linha = 0; linha < 12; linha++){
+       for(int coluna = 0; coluna < 12; coluna++){
+           scanf("%lf", &M[linha][coluna]); 
        }
     }
       
-    for(int i = 0; i < 12; i++){
-        soma += M[L][i];
+    for(int coluna = 0; coluna < 12; coluna++){
+        soma = soma + M[L][coluna];
     }
     
-    if(T[0] == 'S'){
+    if(T == 'S'){
         printf("%.1lf\n", soma);
     }
-    else if(T[0] == 'M'){
-        printf("%.1lf\n", soma/12.0);
+    else if(T == 'M'){
+        printf("%.1lf\n", soma/12);
     } 
 
    return 0;
