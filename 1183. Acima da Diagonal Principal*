@@ -4,61 +4,30 @@ int main(){
 
    char O;
    double M[12][12];
-   double soma = 0.0;
-
-   scanf("%s", &O);
-
-   for(int i = 0; i < 12; i++){
-       for(int j = 0; j < 12; i++){
-           scanf("%lf", & M[i][j]); 
-       }
-    }
-      
-    for(int i = 0; i < 12; i++){
-       for(int j = i  + 1; j < 12; i++){
-           soma += M[i][j];
-       }
-    } 
-     
-    if(O == 'M'){
-        soma = soma/66.0;
-        printf("%.1lf\n", soma);
-    }
-    
-
-   return 0;
-}
-
-#include <stdio.h>
-
-int main(){
-
-   char O;
-   double M[12][12];
    double soma = 0;
-   int colunaInicial;
+   int colunaInicial = 1; 
 
    scanf(" %c", &O);
 
-   for(int linha = 0; linha < 12; linha++){
+    for(int linha = 0; linha < 12; linha++){
        for(int coluna = 0; coluna < 12; coluna++){
-           scanf("%lf", & M[linha][coluna]); 
+           scanf("%lf", &M[linha][coluna]); 
        }
     }
-
-   for(int linha = 0; linha < 12; linha++){
+      
+    for(int linha = 0; linha < 12; linha++){
        for(int coluna = colunaInicial; coluna < 12; coluna++){
            soma = soma + M[linha][coluna];
        }
        colunaInicial++;
     } 
      
-     if(T == 'S'){
+    if(O == 'S'){
         printf("%.1lf\n", soma);
     }
-    else if(T == 'M'){
-        printf("%.1lf\n", soma/66);
-    }
+    else if(O == 'M'){
+        printf("%.1lf\n", soma/66);   
+    }    
 
-   return 0;
+    return 0;
 }
